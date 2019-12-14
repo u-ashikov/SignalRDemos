@@ -1,0 +1,28 @@
+﻿@model ChatFormModel
+
+<form asp-controller="Chat" asp-action="Index" method="post" class="col-6 mx-auto">
+    <div class="form-group">
+        <label asp-for="User" class="h6"></label>
+        <input asp-for="User" class="form-control" />
+        <span asp-validation-for="User" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Message" class="h6"></label>
+        <textarea asp-for="Message" class="form-control" rows="6"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <input id="send-message" type="submit" value="Send Message" class="btn btn-success" />
+</form>
+
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+
+@section Scripts {
+    <script asp-src-include="~/js/signalr/dist/browser/signalr.min.js" asp-append-version="true"></script>
+    <script asp-src-include="~/js/chat.js"></script>
+}

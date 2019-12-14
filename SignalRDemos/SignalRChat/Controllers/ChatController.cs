@@ -4,6 +4,6 @@
 
     public class ChatController : Controller
     {
-        public IActionResult ChatRoom() => this.View();
+        public IActionResult Index() => this.View();
     }
 }

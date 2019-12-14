@@ -4,10 +4,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    <link asp-href-include="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+
+    <script asp-src-include="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script asp-src-include="~/lib/popper.js/umd/popper.js" asp-append-version="true"></script>
+    <script asp-src-include="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
+
+    <script asp-src-include="~/lib/jquery-validation/dist/jquery.validate.js" asp-append-version="true"></script>
+    <script asp-src-include="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
+
 </head>
 <body>
     <div>
+        <partial name="_MenuPartial"/>
         @RenderBody()
     </div>
 </body>
 </html>
+
+@RenderSection("Scripts", false)
