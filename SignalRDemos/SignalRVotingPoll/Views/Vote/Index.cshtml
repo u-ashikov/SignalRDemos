@@ -1,0 +1,53 @@
+﻿@model VoteFormModel
+
+<div class="row">
+    <form id="vote-form" method="post" class="col-6">
+        <div class="form-group">
+            <label asp-for="User" class="h6"></label>
+            <input asp-for="User" class="form-control" />
+            <span asp-validation-for="User" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Question" class="h6"></label>
+            <input asp-for="Question" class="form-control" disabled />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Choice" class="h6"></label>
+            @foreach (var club in Enum.GetValues(typeof(FootballClub)).Cast<FootballClub>())
+            {
+                <div class="form-check">
+                    <input asp-for="Choice" class="form-check-input" type="radio" id="@club.ToString()" value="@((int)club)">
+                    <label for="@club.ToString()" class="form-check-label">
+                        @club.ToString()
+                    </label>
+                </div>
+            }
+
+            <span asp-validation-for="Choice" class="text-danger"></span>
+        </div>
+
+        <input id="vote-btn" type="submit" value="Vote" class="btn btn-success" />
+    </form>
+
+    <div class="col-6">
+        <h4 class="text-center">Voting Log</h4>
+        <div id="voting-log" class="border h-75 rounded p-3 overflow-auto" style="max-height:20em;"></div>
+    </div>
+</div>
+
+<h4 class="col-6 p-0 mt-4">Voting Results</h4>
+<div id="voting-result" class="row">
+    @foreach (var team in Enum.GetValues(typeof(FootballClub)).Cast<FootballClub>())
+    {
+        <div id="@team.ToString()" class="col-12">
+            <span class="font-weight-bold">@team.ToString()</span> - <span class="voting-points">0</span> pts.
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script asp-src-include="~/js/signalr/dist/browser/signalr.js"></script>
+    <script asp-src-include="~/js/vote.js"></script>
+}

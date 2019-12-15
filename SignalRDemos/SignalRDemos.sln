@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{96E92C41-445D-420B-8558-4CA0475198EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{96E92C41-445D-420B-8558-4CA0475198EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRVotingPoll", "SignalRVotingPoll\SignalRVotingPoll.csproj", "{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96E92C41-445D-420B-8558-4CA0475198EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96E92C41-445D-420B-8558-4CA0475198EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96E92C41-445D-420B-8558-4CA0475198EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
