@@ -9,12 +9,12 @@ namespace SignalRChat
 
     public class Startup
     {
-        protected readonly IConfiguration configuration;
-
         public Startup(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this.Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
