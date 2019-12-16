@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{96E92C41-445D-420B-8558-4CA0475198EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRVotingPoll", "SignalRVotingPoll\SignalRVotingPoll.csproj", "{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRVotingPoll", "SignalRVotingPoll\SignalRVotingPoll.csproj", "{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSockets", "WebSockets\WebSockets.csproj", "{6B7014DC-7D70-4545-8550-E1F4B37DE72B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4E6D20D-D070-4655-B4F3-F90AF78D3B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B7014DC-7D70-4545-8550-E1F4B37DE72B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B7014DC-7D70-4545-8550-E1F4B37DE72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B7014DC-7D70-4545-8550-E1F4B37DE72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B7014DC-7D70-4545-8550-E1F4B37DE72B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

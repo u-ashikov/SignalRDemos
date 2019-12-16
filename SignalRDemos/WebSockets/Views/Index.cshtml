@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Web Sockets</title>
+</head>
+<body>
+    <h1>Message me</h1>
+    <ul id="messages"></ul>
+
+    <form id="form" action="/send-message" method="post">
+        <label for="message">Send To: </label>
+        <input type="text" id="url" name="url" value="wss://localhost:44330/" />
+
+        <label for="message">Message: </label>
+        <input type="text" id="message" name="message" />
+
+        <input type="submit" value="Send" />
+    </form>
+
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/messages.js"></script>
+</body>
+</html>
