@@ -9,15 +9,15 @@
     <h1>Message me</h1>
     <ul id="messages"></ul>
 
-    <form id="form" action="/send-message" method="post">
-        <label for="message">Send To: </label>
-        <input type="text" id="url" name="url" value="wss://localhost:44330/" />
+    <button id="connect">Connect</button>
+    <button id="close">Close Connection</button>
 
+    <div style="margin-top:20px;">
         <label for="message">Message: </label>
         <input type="text" id="message" name="message" />
 
-        <input type="submit" value="Send" />
-    </form>
+        <input id="send-btn" type="submit" value="Send" />
+    </div>
 
     <script src="~/js/jquery/jquery.min.js"></script>
     <script src="~/js/messages.js"></script>

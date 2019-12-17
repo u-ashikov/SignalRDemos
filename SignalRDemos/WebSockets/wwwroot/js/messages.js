@@ -1,26 +1,37 @@
 ﻿'use strict';
 
-var webSocket = null;
+var socket;
 
-function connect() {
-    var url = `wss://${location.host}/`;
-    console.log('url is: ' + url);
+$('#connect').on('click', function (event) {
+    var url = `wss://${location.host}/test`;
 
-    webSocket = new WebSocket(url);
+    socket = new WebSocket(url);
 
-    webSocket.onopen = function (event) {
+    socket.onopen = function (event) {
         console.log('Socket opened!');
     };
 
-    webSocket.onclose = function (event) {
+    socket.onclose = function (event) {
         console.log('Socket closed!');
     };
 
-    webSocket.onmessage = function (event) {
-        var message = event.data;
+    socket.onmessage = function (event) {
+        console.log('Message:' + event.data);
 
-        $('#messages').append($('<li>').text(message));
+        $('#messages').append($('<li>').text(`Message from server: ${event.data}`));
     };
-}
 
-connect();
+    console.log('Socket connected!');
+});
+
+$('#close').on('click', function (event) {
+    socket.close(1000, 'Closed from client!');
+});
+
+$('#send-btn').on('click', function (event) {
+    var message = $('#message').val();
+
+    socket.send(message);
+
+    $('#messages').append($('<li>').text(`Message from client: ${message}`));
+});

@@ -32,12 +32,24 @@ namespace WebSockets
 
             app.Use(async (context, next) =>
             {
-                if (context.Request.Method == HttpMethods.Get)
+                if (context.Request.Path == "/test" && context.Request.Method == HttpMethods.Get)
                 {
                     if (context.WebSockets.IsWebSocketRequest)
                     {
                         var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                        await this.GetMessages(context, webSocket);
+
+                        var buffer = new byte[1024];
+
+                        var socketResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+
+                        while (!socketResult.CloseStatus.HasValue)
+                        {
+                            await webSocket.SendAsync(new ArraySegment<byte>(buffer, 0, socketResult.Count), WebSocketMessageType.Text, socketResult.EndOfMessage, CancellationToken.None);
+
+                            socketResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                        }
+
+                        await webSocket.CloseAsync(socketResult.CloseStatus.Value, socketResult.CloseStatusDescription, CancellationToken.None);
                     }
                     else
                     {
