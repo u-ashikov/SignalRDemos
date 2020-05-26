@@ -2,6 +2,40 @@
 
 var socket;
 
+//var socketConnector = function () {
+//    var socket;
+
+//    this.connect = function (url) {
+//        if (!url) {
+//            url = `wss://${location.host}/test`;
+//        }
+
+//        socket = new WebSocket(url);
+
+//        socket.onopen = function (event) {
+//            console.log('Socket opened!');
+//        };
+
+//        socket.onclose = function (event) {
+//            console.log('Socket closed!');
+//        };
+
+//        socket.onmessage = function (event) {
+//            console.log('Message:' + event.data);
+//        };
+
+//        console.log('Socket connected!');
+//    };
+
+//    this.sendMessage = function (message) {
+//        socket.send(message);
+//    };
+//};
+
+//var connector = new socketConnector();
+
+// TODO: Create function to operate with sockets.
+
 $('#connect').on('click', function (event) {
     var url = `wss://${location.host}/test`;
 
